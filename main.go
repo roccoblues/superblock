@@ -13,6 +13,7 @@ import (
 )
 
 const (
+	version   = "0.2.1"
 	outOfBand = "oob"
 )
 
@@ -26,6 +27,7 @@ func main() {
 	fs := flag.NewFlagSet("superblock", flag.ExitOnError)
 	fs.Usage = func() { usage(fs) }
 	var (
+		versionFlag   = fs.Bool("version", false, "show version information")
 		authorizeFlag = fs.Bool("authorize", false, "fetch access token and secret")
 		apiKey        = fs.String("api-key", "", "twitter app client key (also via SUPERBLOCK_API_KEY)")
 		apiKeySecret  = fs.String("api-key-secret", "", "twitter app client secret (also via SUPERBLOCK_API_KEY_SECRET)")
@@ -33,6 +35,11 @@ func main() {
 		tokenSecret   = fs.String("token-secret", "", "twitter access token secret (also via SUPERBLOCK_TOKEN_SECRET)")
 	)
 	ff.Parse(fs, os.Args[1:], ff.WithEnvVarPrefix("SUPERBLOCK"))
+
+	if *versionFlag {
+		fmt.Println(version)
+		os.Exit(0)
+	}
 
 	if *apiKey == "" {
 		fmt.Fprintln(os.Stderr, "--api-key is required")

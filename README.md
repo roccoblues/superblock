@@ -27,7 +27,7 @@ I want everyone to follow you!👍
 
 ## Install
 
-`go install github.com/roccoblues/superblock@latest`
+`go install github.com/roccoblues/superblock@0.2.1`
 
 ## Setup
 
