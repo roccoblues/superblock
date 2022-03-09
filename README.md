@@ -1,6 +1,6 @@
 # SuperBlock
 
-Don't like a bad tweet? Block the tweet author, and every single person who liked it. Like [megablock](https://megablock.xyz/) but actually working.
+Don't like a bad tweet? Block the tweet author and every single person who liked it. Like [megablock](https://megablock.xyz/) but actually working.
 
 ## Usage
 
